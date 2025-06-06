@@ -2,16 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Demo HTMLs</title>
+  <title>Demo de Conversión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1f2937;
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 70px);
+      border: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Demo de Conversión de Word a HTML</h1>
-  <ul>
-    <li><a href="1.html" target="_blank">Ver 1.html</a></li>
-    <li><a href="2.html" target="_blank">Ver 2.html</a></li>
-    <li><a href="3.htm" target="_blank">Ver 3.htm</a></li>
-    <li><a href="4.html" target="_blank">Ver 4.html</a></li>
-    <li><a href="5.html" target="_blank">Ver 5.html</a></li>
-  </ul>
+  <header>
+    <nav>
+      <a href="#" onclick="cargarPagina('1.html')">Pandoc</a>
+      <a href="#" onclick="cargarPagina('2.html')">Word2CleanHTML</a>
+      <a href="#" onclick="cargarPagina('3.htm')">Exportar desde Word</a>
+      <a href="#" onclick="cargarPagina('4.html')">Convertio</a>
+      <a href="#" onclick="cargarPagina('5.html')">NCH Software</a>
+    </nav>
+  </header>
+
+  <iframe id="visor" src="1.html"></iframe>
+
+  <script>
+    function cargarPagina(pagina) {
+      document.getElementById('visor').src = pagina;
+    }
+  </script>
 </body>
 </html>
